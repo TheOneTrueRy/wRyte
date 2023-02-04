@@ -1,9 +1,75 @@
 /* SECTION Elements & Other */
 
+h1{
+  font-family: 'Satisfy', cursive;
+  font-size: 4em;
+}
 
+body{
+  background-color: rgb(32, 40, 56);
+}
+
+header{
+  height: 13vh;
+}
+
+main{
+  height: 80vh;
+}
+
+h2{
+  color: white;
+  font-size: 2.5em;
+}
+
+h5{
+  margin-top: 2em;
+  color: rgba(255, 255, 255, 0.788);
+}
 
 /* SECTION Classes */
 
+.nomb{
+  margin-bottom: 0;
+}
 
+.hundo{
+  height: 100%;
+}
+
+.noteCard{
+  background-color: rgba(128, 128, 128, 0.26);
+}
 
 /* SECTION IDs */
+
+#newNote{
+  margin-right: 2em;
+  font-size: 3em;
+  background-color: inherit;
+  color: white;
+  border: 0;
+  /* transition: 0.4s; */
+}
+
+#newNote:hover{
+  transform: scale(1.1);
+}
+
+#noteText{
+  background-color: rgb(245, 235, 217);
+}
+
+#deleteNote{
+  border: 0;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  background-color: rgb(253, 101, 101);
+  color: white;
+  text-shadow: 1px 1px 4px black;
+}
+
+#deleteNote:hover{
+  transform: scale(1.1);
+}

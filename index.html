@@ -5,46 +5,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/kreis/64/Pencil-Writing-512.png">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.1.96/css/materialdesignicons.min.css"
     integrity="sha512-NaaXI5f4rdmlThv3ZAVS44U9yNWJaUYWzPhvlg5SC7nMRvQYV9suauRK3gVbxh7qjE33ApTPD+hkOW78VSHyeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>wRyte</title>
 </head>
 
 <body>
+
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">wRyte</span>
-      </a>
+    <nav class="navbar navbar-expand text-light no-select justify-content-between">
+      <h1 class="m-3 ms-5 fw-bold">wRyte .</h1>
+      <button id="newNote" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"><i class="mdi mdi-notebook-plus"></i></button>
     </nav>
   </header>
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+
+  <main id="centerPage">
+    <!-- STUB ActiveNote Template! -->
+    <!-- <div class="container-fluid hundo">
+      <div class="row hundo pb-5" id="noteRow">
+        <div class="col-8 offset-2 noteCard rounded hundo">
+          <div class="row hundo">
+            <div class="col-4 ps-4 pt-4">
+              <h2 id="noteTitle">${this.title}</h2>
+              <h5>Date Created: ${this.date}</h5>
+              <h5>Last Updated: ${this.lastUpdated}</h5>
+            </div>
+            <div class="col-6 d-flex align-items-center justify-content-center g-0">
+              <textarea name="body" id="noteText" cols="100" rows="22" class="rounded" placeholder="Your notes go here!">${this.body}</textarea>
+            </div>
+            <div class="col-2 text-end pt-4 pe-4">
+              <button id="deleteNote" onclick="app.notesController.deleteNote(${this.id})"><i class="mdi mdi-trash-can fs-2"></i></button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </main>
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p><small>Made with 💖 by CodeWorks</small></p>
+
+  <!-- SECTION Bootstrap -->
+
+  <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasLabel">wRyte down some notes...</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-  </footer>
+    <div class="offcanvas-body">
+      
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
     integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="dist/timeago.min.js"></script>
   <script src="app/App.js" type="module"></script>
 </body>
 
