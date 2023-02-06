@@ -47,6 +47,11 @@ export class NotesController{
     }
   }
 
+  updateNote(noteID){
+    let note = appState.notes.find(note => note.id == noteID)
+    
+  }
+
   async deleteNote(noteID){
     try {
       const yes = await Pop.confirm('Are you sure you want to permanently delete this note?')
