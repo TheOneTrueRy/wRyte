@@ -5,6 +5,14 @@ import { setHTML } from "../Utils/Writer.js"
 
 
 class NotesService{
+  updateNote(updatedBody) {
+    let note = appState.note
+    note.body = updatedBody
+    note.lastUpdated = new Date()
+    saveState('notes', appState.notes)
+    appState.emit('note')
+    
+  }
   deleteNote(noteID) {
     let activeNote = appState.notes.findIndex(note => note.id == noteID)
     appState.notes.splice(activeNote, 1)

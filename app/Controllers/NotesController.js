@@ -26,6 +26,7 @@ export class NotesController{
   constructor(){
     _drawNotes()
     appState.on('notes', _drawNotes)
+    appState.on('note', _drawNote)
   }
 
   SetActiveNote(noteID){
@@ -47,8 +48,15 @@ export class NotesController{
     }
   }
 
-  updateNote(noteID){
-    let note = appState.notes.find(note => note.id == noteID)
+  updateNote(){
+    try {
+      let noteText = document.getElementById('noteText')
+      // @ts-ignore
+      let updatedBody = noteText.value
+      notesService.updateNote(updatedBody)
+    } catch (error) {
+      Pop.error(error)
+    }
     
   }
 
