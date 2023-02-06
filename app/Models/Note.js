@@ -22,7 +22,7 @@ export class Note{
     <textarea name="body" id="noteText" cols="100" rows="22" class="rounded" placeholder="Your notes go here!">${this.body}</textarea>
   </div>
   <div class="col-2 text-end pt-4 pe-4 g-0">
-    <button id="deleteNote" onclick="app.notesController.deleteNote(${this.id})"><i class="mdi mdi-trash-can fs-2"></i></button>
+    <button id="deleteNote" onclick="app.notesController.deleteNote('${this.id}')"><i class="mdi mdi-trash-can fs-2"></i></button>
   </div>
     `
   }

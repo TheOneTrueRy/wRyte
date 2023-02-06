@@ -2,9 +2,13 @@ import { appState } from "../AppState.js";
 import { notesService } from "../Services/NotesService.js";
 import { getFormData } from "../Utils/FormHandler.js";
 import { Pop } from "../Utils/Pop.js";
+import { saveState } from "../Utils/Store.js";
 import { setHTML, setText } from "../Utils/Writer.js";
 
 function _drawNotes(){
+  if(appState.notes.length == 0){
+    setHTML('noteList', '')
+  }
   appState.notes.forEach(note => {
     setHTML('noteList', note.NoteListTemplate)
   })
@@ -41,5 +45,13 @@ export class NotesController{
     } catch (error) {
       Pop.error(error)
     }
+  }
+
+  deleteNote(noteID){
+    let activeNote = appState.notes.findIndex(note => note.id == noteID)
+    appState.notes.splice(activeNote, 1)
+    saveState('notes', appState.notes)
+    appState.emit('notes')
+    setHTML('centerPage', '')
   }
 }
