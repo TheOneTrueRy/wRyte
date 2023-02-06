@@ -29,7 +29,7 @@ export class Note{
 
   get NoteListTemplate(){
     return `
-    <div class="rounded pb-3 pt-3 px-1 selectable" onclick="app.notesController.SetActiveNote('${this.id}')">
+    <div class="rounded pb-3 pt-3 px-1 selectable" onclick="app.notesController.SetActiveNote('${this.id}')" data-bs-dismiss="offcanvas">
     <h4 style="color: ${this.color}" class="nomb">${this.title}</h4>
     </div>
     `
