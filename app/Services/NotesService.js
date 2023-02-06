@@ -19,8 +19,7 @@ class NotesService{
     appState.notes.splice(activeNote, 1)
     saveState('notes', appState.notes)
     appState.emit('notes')
-    setHTML('centerPage', `            <h1 class="text-center text-light mt-5">Click the notebook in the top right to start <em>wRyting</em> your own notes!</h1>
-    <img id="deathnote" src="https://cdn3.whatculture.com/images/2019/02/585397eb957692ba-600x338.gif" class="text-center">`)
+    setHTML('centerPage', `<h1 class="text-center text-light mt-5"><em>wRyte something down</em></h1>`)
     Pop.toast('Note deleted!','success','top',3000,false)
   }
   constructor(){
