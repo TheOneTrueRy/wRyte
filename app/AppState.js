@@ -9,13 +9,7 @@ class AppState extends EventEmitter {
   values = loadState('values', [Value])
 
   /** @type {import('./Models/Note').Note[]} */
-  notes = [
-    new Note(
-    {
-      
-  }
-  )
-]
+  notes = loadState('notes', [Note])
 
   /** @type {import('./Models/Note').Note} */
   note = null

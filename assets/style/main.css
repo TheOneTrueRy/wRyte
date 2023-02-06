@@ -14763,7 +14763,7 @@ main {
 
 button {
   font-weight: 400 !important;
-  text-transform: capitalize;
+  text-transform: none;
   letter-spacing: 1px;
 }
 

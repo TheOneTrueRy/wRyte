@@ -27,13 +27,13 @@
     </nav>
   </header>
 
-  <main id="centerPage">
-    <!-- STUB ActiveNote Template! -->
-    <!-- <div class="container-fluid hundo">
+  <main>
+    <div class="container-fluid hundo">
       <div class="row hundo pb-5" id="noteRow">
-        <div class="col-8 offset-2 noteCard rounded hundo">
-          <div class="row hundo">
-            <div class="col-4 ps-4 pt-4">
+        <div class="col-10 offset-1 noteCard rounded hundo">
+          <div id="centerPage" class="row hundo">
+
+            <!-- <div class="col-4 ps-4 pt-4">
               <h2 id="noteTitle">${this.title}</h2>
               <h5>Date Created: ${this.date}</h5>
               <h5>Last Updated: ${this.lastUpdated}</h5>
@@ -43,22 +43,44 @@
             </div>
             <div class="col-2 text-end pt-4 pe-4">
               <button id="deleteNote" onclick="app.notesController.deleteNote(${this.id})"><i class="mdi mdi-trash-can fs-2"></i></button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </main>
 
   <!-- SECTION Bootstrap -->
 
   <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasLabel">wRyte down some notes...</h5>
+    <div class="offcanvas-header pb-0">
+      <h3 class="offcanvas-title" id="offcanvasLabel">wRyte down some notes...</h3>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center">
+            <p>Total Notes: <span id="totalNotes"></span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div id="noteList" class="col-12 g-0">
+            <!-- <div class="rounded pb-3 pt-4 px-1">
+              <h4 style="color: ${this.color}" class="nomb">${this.title}</h4>
+            </div> -->
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12">
+            <form class="d-flex justify-content-between align-items-end" onsubmit="app.notesController.createNote()">
+              <input type="text" name="title" id="title" placeholder="Enter Title" required min="3" max="15">
+              <input type="color" name="color" id="color" required>
+              <button type="submit" class="noteCard rounded text-light">wRyte</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -67,7 +89,6 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
     integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
-  <script src="dist/timeago.min.js"></script>
   <script src="app/App.js" type="module"></script>
 </body>
 
