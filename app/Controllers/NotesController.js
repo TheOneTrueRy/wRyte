@@ -47,11 +47,13 @@ export class NotesController{
     }
   }
 
-  deleteNote(noteID){
-    let activeNote = appState.notes.findIndex(note => note.id == noteID)
-    appState.notes.splice(activeNote, 1)
-    saveState('notes', appState.notes)
-    appState.emit('notes')
-    setHTML('centerPage', '')
+  async deleteNote(noteID){
+    try {
+      const yes = await Pop.confirm('Are you sure you want to permanently delete this note?')
+      if (!yes) { return }
+      notesService.deleteNote(noteID)
+    } catch (error) {
+      Pop.error(error)
+    }
   }
 }
