@@ -8,7 +8,7 @@ class NotesService{
   updateNote(updatedBody) {
     let note = appState.note
     note.body = updatedBody
-    note.lastUpdated = new Date()
+    note.lastUpdated = new Date().toLocaleString()
     saveState('notes', appState.notes)
     appState.emit('note')
     

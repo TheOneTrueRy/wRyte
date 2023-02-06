@@ -6,7 +6,7 @@ export class Note{
     this.id = generateId()
     this.title = data.title
     this.color = data.color
-    this.date = data.date || new Date().toLocaleDateString('en-US')
+    this.date = data.date || new Date().toLocaleString()
     this.body = data.body || ''
     this.lastUpdated = data.lastUpdated || ''
   }
