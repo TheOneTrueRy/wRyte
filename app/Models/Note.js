@@ -19,7 +19,7 @@ export class Note{
     <h5>Last Updated: ${this.lastUpdated}</h5>
   </div>
   <div class="col-6 d-flex align-items-center justify-content-center g-0">
-    <textarea name="body" id="noteText" cols="100" rows="22" class="rounded" placeholder="Your notes go here!">${this.body}</textarea>
+    <textarea name="body" id="noteText" cols="100" rows="22" class="rounded" placeholder="Your notes go here!" onblur="app.notesController.updateNote('${this.id}')">${this.body}</textarea>
   </div>
   <div class="col-2 text-end pt-4 pe-4 g-0">
     <button id="deleteNote" onclick="app.notesController.deleteNote('${this.id}')"><i class="mdi mdi-trash-can fs-2"></i></button>
