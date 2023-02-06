@@ -21,7 +21,7 @@ export class Note{
   <div class="col-6 d-flex align-items-center justify-content-center g-0">
     <textarea name="body" id="noteText" cols="100" rows="22" class="rounded" placeholder="Your notes go here!">${this.body}</textarea>
   </div>
-  <div class="col-2 text-end pt-4 pe-4">
+  <div class="col-2 text-end pt-4 pe-4 g-0">
     <button id="deleteNote" onclick="app.notesController.deleteNote(${this.id})"><i class="mdi mdi-trash-can fs-2"></i></button>
   </div>
     `
@@ -29,7 +29,7 @@ export class Note{
 
   get NoteListTemplate(){
     return `
-    <div class="rounded pb-3 pt-3 px-1 selectable">
+    <div class="rounded pb-3 pt-3 px-1 selectable" onclick="app.notesController.SetActiveNote('${this.id}')">
     <h4 style="color: ${this.color}" class="nomb">${this.title}</h4>
     </div>
     `
