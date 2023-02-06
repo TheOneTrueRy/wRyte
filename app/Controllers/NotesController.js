@@ -6,13 +6,13 @@ import { saveState } from "../Utils/Store.js";
 import { setHTML, setText } from "../Utils/Writer.js";
 
 function _drawNotes(){
+  let template = ''
   if(appState.notes.length == 0){
     setHTML('noteList', '')
   }
-  appState.notes.forEach(note => {
-    setHTML('noteList', note.NoteListTemplate)
-  })
+  appState.notes.forEach(note => {template += note.NoteListTemplate})
   setText('totalNotes', appState.notes.length)
+  setHTML('noteList', template)
 }
 
 function _drawNote(){

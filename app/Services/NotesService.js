@@ -1,5 +1,6 @@
 import { appState } from "../AppState.js"
 import { Note } from "../Models/Note.js"
+import { Pop } from "../Utils/Pop.js"
 import { saveState } from "../Utils/Store.js"
 import { setHTML } from "../Utils/Writer.js"
 
@@ -19,6 +20,7 @@ class NotesService{
     saveState('notes', appState.notes)
     appState.emit('notes')
     setHTML('centerPage', '')
+    Pop.toast('Note deleted!','success','top',3000,false)
   }
   constructor(){
     
@@ -28,6 +30,7 @@ class NotesService{
     appState.notes.push(note)
     saveState('notes', appState.notes)
     appState.emit('notes')
+    Pop.toast('Note created!','success','top',3000,false)
   }
 }
 
