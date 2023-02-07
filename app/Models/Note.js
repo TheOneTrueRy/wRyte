@@ -1,6 +1,5 @@
 import { generateId } from "../Utils/generateId.js"
 
-
 export class Note{
   constructor(data){
     this.id = generateId()
